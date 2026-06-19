@@ -2299,7 +2299,7 @@ Availability: Open to full-time, freelance, client projects. Replies within hour
         hist.push({ role: "user", content: t });
         const tp = addMsg("Thinking…", "ag ty");
         try {
-          const res = await fetch("https://portfolio-api-us25.onrender.com/", {
+          const res = await fetch("https://portfolio-api-us25.onrender.com/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ messages: hist, system: SYS }),
