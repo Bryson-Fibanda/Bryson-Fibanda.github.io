@@ -14,13 +14,13 @@
     />
     <meta
       property="og:description"
-      content="Kenyan full-stack developer and computer vision builder."
+      content="Kenyan full-stack developer. Flask · React · AI · M-Pesa."
     />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -39,22 +39,21 @@
         scroll-behavior: smooth;
       }
       :root {
-        --bg: #001f3e;
-        --bg2: #073358;
-        --bg3: #0b4273;
-        --line: rgba(255, 255, 255, 0.08);
-        --line2: rgba(255, 255, 255, 0.16);
-        --sienna: #0da574;
-        --sienna2: rgba(13, 165, 116, 0.14);
-        --sienna3: rgba(13, 165, 116, 0.07);
-        --sienna4: rgba(13, 165, 116, 0.3);
-        --flag: #ffd716;
-        --text: #f1f7f5;
-        --text2: #9fb8c9;
-        --text3: #628299;
-        --serif: "Ubuntu", sans-serif;
-        --sans: "Open Sans", sans-serif;
-        --mono: "Open Sans", sans-serif;
+        --bg: #0a1628;
+        --bg2: #0f1e38;
+        --bg3: #152444;
+        --line: #1c2e4a;
+        --line2: #253759;
+        --sienna: #4a90d9;
+        --sienna2: rgba(74, 144, 217, 0.12);
+        --sienna3: rgba(74, 144, 217, 0.06);
+        --sienna4: rgba(74, 144, 217, 0.25);
+        --text: #f0f4ff;
+        --text2: #9aafc8;
+        --text3: #5a7496;
+        --serif: "Oswald", sans-serif;
+        --sans: "Poppins", sans-serif;
+        --mono: "IBM Plex Mono", monospace;
       }
       body {
         font-family: var(--sans);
@@ -161,8 +160,10 @@
         position: absolute;
         left: calc(100% + 14px);
         font-family: var(--mono);
-        font-size: 0.68rem;
+        font-size: 0.52rem;
         color: var(--text3);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
         white-space: nowrap;
         opacity: 0;
         pointer-events: none;
@@ -231,8 +232,10 @@
         align-items: center;
       }
       .tnav-links a {
-        font-size: 0.82rem;
+        font-size: 0.7rem;
         font-weight: 500;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
         color: var(--text3);
         transition: color 0.2s;
       }
@@ -244,8 +247,10 @@
         padding: 0.38rem 0.9rem;
         border: 1px solid var(--line2);
         border-radius: 2px;
-        font-size: 0.78rem;
+        font-size: 0.68rem;
         font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
         color: var(--text2);
         transition: all 0.2s;
       }
@@ -318,6 +323,25 @@
         transition-delay: 0.35s;
       }
 
+      /* ══ EYEBROW ══ */
+      .eb {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        color: var(--sienna);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+      }
+      .eb::before {
+        content: "";
+        width: 18px;
+        height: 1px;
+        background: var(--sienna);
+      }
+
       /* ══ HERO ══ */
       #hero {
         min-height: 100vh;
@@ -349,8 +373,10 @@
         align-items: center;
         gap: 0.6rem;
         font-family: var(--mono);
-        font-size: 0.8rem;
+        font-size: 0.62rem;
         color: var(--text3);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         margin-bottom: 3rem;
         opacity: 0;
         animation: fu 0.5s ease 0.1s forwards;
@@ -387,7 +413,7 @@
         font-family: var(--serif);
         font-size: 40vw;
         line-height: 0.8;
-        color: rgba(13, 165, 116, 0.04);
+        color: rgba(193, 127, 62, 0.04);
         pointer-events: none;
         user-select: none;
         letter-spacing: -0.05em;
@@ -511,46 +537,87 @@
       }
       .sec-title {
         font-family: var(--serif);
-        font-weight: 700;
-        font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-        line-height: 1.15;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.05;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .sec-title em {
+        font-style: normal;
+        color: var(--sienna);
       }
       .svc-list {
         margin-top: 2.5rem;
-        border-top: 1px solid var(--line);
+        border-top: 1px solid var(--line2);
       }
       .svc-row {
+        position: relative;
         display: grid;
-        grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr) auto;
-        gap: 2rem;
+        grid-template-columns: 54px minmax(180px, 1fr) minmax(0, 2fr) auto;
+        gap: 1.6rem;
         align-items: center;
-        padding: 1.4rem 0;
+        padding: 1.7rem 0.5rem 1.7rem 0;
         border-bottom: 1px solid var(--line);
+        transition: background 0.2s;
+      }
+      .svc-row::before {
+        content: "";
+        position: absolute;
+        left: -1.4rem;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--sienna);
+        transform: scaleY(0);
+        transition: transform 0.25s ease;
+      }
+      .svc-row:hover {
+        background: var(--sienna3);
+      }
+      .svc-row:hover::before {
+        transform: scaleY(1);
+      }
+      .svc-num {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text3);
       }
       .svc-name {
         font-family: var(--serif);
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 1.05rem;
       }
       .svc-desc {
-        font-size: 0.82rem;
+        font-size: 0.84rem;
         color: var(--text2);
         line-height: 1.7;
       }
       .svc-price {
-        font-size: 0.82rem;
+        font-size: 0.78rem;
         color: var(--sienna);
         font-weight: 600;
         white-space: nowrap;
         text-align: right;
+        padding: 0.4rem 0.8rem;
+        border: 1px solid var(--sienna4);
+        border-radius: 99px;
+        background: var(--sienna3);
       }
       @media (max-width: 760px) {
         .svc-row {
-          grid-template-columns: 1fr;
-          gap: 0.4rem;
+          grid-template-columns: 28px 1fr;
+          row-gap: 0.5rem;
+        }
+        .svc-row::before {
+          left: -1rem;
+        }
+        .svc-desc {
+          grid-column: 2;
         }
         .svc-price {
+          grid-column: 2;
           text-align: left;
+          width: fit-content;
         }
       }
       .work-sub {
@@ -695,8 +762,10 @@
       }
       .pinfo-meta {
         font-family: var(--mono);
-        font-size: 0.74rem;
+        font-size: 0.58rem;
         color: var(--text3);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -742,7 +811,7 @@
         font-size: 0.74rem;
         font-weight: 600;
         color: var(--sienna);
-        border-bottom: 1px solid rgba(13, 165, 116, 0.3);
+        border-bottom: 1px solid rgba(193, 127, 62, 0.3);
         padding-bottom: 1px;
         transition:
           gap 0.2s,
@@ -780,7 +849,7 @@
         width: 38px;
         height: 38px;
         border-radius: 4px;
-        background: rgba(13, 165, 116, 0.1);
+        background: rgba(193, 127, 62, 0.1);
         color: var(--sienna);
         display: flex;
         align-items: center;
@@ -797,8 +866,10 @@
       }
       .it-cell-org {
         font-family: var(--mono);
-        font-size: 0.78rem;
+        font-size: 0.58rem;
         color: var(--sienna);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
         margin-bottom: 0.8rem;
       }
       .it-cell-desc {
@@ -813,8 +884,10 @@
       }
       .it-certs-label {
         font-family: var(--mono);
-        font-size: 0.76rem;
+        font-size: 0.58rem;
         color: var(--text3);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
         margin-bottom: 0.9rem;
       }
       .cert-row {
@@ -887,8 +960,9 @@
       }
       .acc-label {
         font-family: var(--mono);
-        font-size: 0.85rem;
-        font-weight: 600;
+        font-size: 0.62rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
         color: var(--text2);
         display: flex;
         align-items: center;
@@ -929,8 +1003,8 @@
         color: var(--text2);
       }
       .chip.hi {
-        background: rgba(13, 165, 116, 0.1);
-        border-color: rgba(13, 165, 116, 0.2);
+        background: rgba(193, 127, 62, 0.1);
+        border-color: rgba(193, 127, 62, 0.2);
         color: var(--sienna);
       }
 
@@ -1062,8 +1136,10 @@
         flex-shrink: 0;
       }
       .c-label {
-        font-size: 0.74rem;
+        font-size: 0.58rem;
         color: var(--text3);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
       }
       .c-val {
         font-size: 0.8rem;
@@ -1078,8 +1154,10 @@
       }
       .av-label {
         font-family: var(--mono);
-        font-size: 0.76rem;
+        font-size: 0.58rem;
         color: var(--text3);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
         margin-bottom: 0.9rem;
       }
       .av-status {
@@ -1318,7 +1396,7 @@
         height: 26px;
         border-radius: 50%;
         background: var(--sienna2);
-        border: 1px solid rgba(13, 165, 116, 0.2);
+        border: 1px solid rgba(193, 127, 62, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1686,29 +1764,31 @@
         <div class="hero-in">
           <div class="hero-status">
             <span class="hero-status-dot"></span>
-            Available for work in Nairobi
+            Available · Nairobi, Kenya
           </div>
           <h1 class="hero-name">
             Bryson<br />
-            <span class="row2">Fibanda</span>
+            <span class="row2">Fibanda.</span>
           </h1>
           <div class="hero-foot">
             <p class="hero-desc">
-              Full-stack developer and computer vision builder in Nairobi.
-              I build <strong>detection and tracking systems</strong> with
-              OpenCV, YOLO and MediaPipe, and ship them inside real
-              full-stack products with working M-Pesa payments.
+              Full-stack developer in Nairobi with an IT support background.
+              I build <strong>web and mobile apps, computer vision tools,
+              and payment-ready products</strong> in Python, Flask and
+              React, design in Figma and Canva, and help people navigate
+              Kenyan government services online.
             </p>
             <div class="hero-right">
               <div class="hero-tags">
+                <span class="h-tag">Python</span>
                 <span class="h-tag">OpenCV</span>
                 <span class="h-tag">YOLO</span>
                 <span class="h-tag">MediaPipe</span>
                 <span class="h-tag">Flask</span>
                 <span class="h-tag">React</span>
-                <span class="h-tag">Docker</span>
                 <span class="h-tag">M-Pesa</span>
-                <span class="h-tag">Paystack</span>
+                <span class="h-tag">Figma</span>
+                <span class="h-tag">Canva</span>
               </div>
               <div class="hero-acts">
                 <a href="#work" class="btn-fill"
@@ -1731,7 +1811,8 @@
         <div class="sec-in">
           <div class="work-head">
             <div>
-              <h2 class="sec-title r d1">Shipped, not simulated</h2>
+              <div class="eb r">Shipped products</div>
+              <h2 class="sec-title r d1">The <em>work.</em></h2>
             </div>
             <p class="work-sub r d2">
               A live application. Real users. Real M-Pesa.
@@ -1745,7 +1826,7 @@
             <div class="pinfo">
               <div>
                 <div class="pinfo-meta">
-                  <span class="live-dot"></span> Live now
+                  <span class="live-dot"></span> Live · Faith &amp; AI
                 </div>
                 <div class="pinfo-name">VerseFinder</div>
                 <p class="pinfo-desc">
@@ -1766,8 +1847,8 @@
                 href="https://versefinder.onrender.com/"
                 target="_blank"
                 class="plink"
-                >Open versefinder.onrender.com</a
-              >
+                >View live <i class="fas fa-arrow-right"></i
+              ></a>
             </div>
           </div>
 
@@ -1778,7 +1859,8 @@
       <!-- SERVICES -->
       <section id="services" class="sec">
         <div class="sec-in">
-          <h2 class="sec-title r d1">What you can hire me for</h2>
+          <div class="eb r">Services</div>
+          <h2 class="sec-title r d1">What I <em>charge.</em></h2>
           <p class="work-sub r d2">
             Starting prices in Kenyan shillings. Final quote depends on
             scope, timeline, and whether it's a one-off build or ongoing
@@ -1786,6 +1868,7 @@
           </p>
           <div class="svc-list r d3">
             <div class="svc-row">
+              <div class="svc-num">01</div>
               <div class="svc-name">Computer vision systems</div>
               <div class="svc-desc">
                 Detection, tracking and gesture interfaces with OpenCV, YOLO
@@ -1795,6 +1878,7 @@
               <div class="svc-price">From KSh 60,000</div>
             </div>
             <div class="svc-row">
+              <div class="svc-num">02</div>
               <div class="svc-name">Full-stack web &amp; mobile apps</div>
               <div class="svc-desc">
                 Flask or Django backend, React or React Native frontend,
@@ -1803,6 +1887,7 @@
               <div class="svc-price">From KSh 40,000</div>
             </div>
             <div class="svc-row">
+              <div class="svc-num">03</div>
               <div class="svc-name">Payment integration</div>
               <div class="svc-desc">
                 M-Pesa Daraja, Paystack or IntaSend wired into a real
@@ -1811,6 +1896,7 @@
               <div class="svc-price">From KSh 15,000</div>
             </div>
             <div class="svc-row">
+              <div class="svc-num">04</div>
               <div class="svc-name">Deployment &amp; containerization</div>
               <div class="svc-desc">
                 Docker setup and deployment to Render, with environment
@@ -1819,6 +1905,7 @@
               <div class="svc-price">From KSh 10,000</div>
             </div>
             <div class="svc-row">
+              <div class="svc-num">05</div>
               <div class="svc-name">Kenyan digital services support</div>
               <div class="svc-desc">
                 e-Citizen and other government portal workflows, from
@@ -1827,6 +1914,7 @@
               <div class="svc-price">From KSh 1,000/hr</div>
             </div>
             <div class="svc-row">
+              <div class="svc-num">06</div>
               <div class="svc-name">Design</div>
               <div class="svc-desc">
                 Canva brand kits and social sets, Figma prototypes for
@@ -1841,7 +1929,8 @@
       <!-- SKILLS -->
       <section id="skills" class="sec">
         <div class="sec-in">
-          <h2 class="sec-title r d1">What I build with</h2>
+          <div class="eb r">Capabilities</div>
+          <h2 class="sec-title r d1">What I <em>bring.</em></h2>
           <div class="skills-wrap">
             <div class="skills-copy r d2">
               <p>
@@ -1949,7 +2038,8 @@
       <!-- EDUCATION -->
       <section id="edu" class="sec">
         <div class="sec-in">
-          <h2 class="sec-title r d1">Background</h2>
+          <div class="eb r">Background</div>
+          <h2 class="sec-title r d1"><em>Education.</em></h2>
           <div class="edu-list">
             <div class="edu-item r d2">
               <div class="edu-yr">2020 – 2025</div>
@@ -1983,7 +2073,8 @@
       <!-- CONTACT -->
       <section id="contact" class="sec">
         <div class="sec-in">
-          <h2 class="sec-title r d1">Start a project</h2>
+          <div class="eb r">Get in touch</div>
+          <h2 class="sec-title r d1">Let's build something <em>real.</em></h2>
           <div class="contact-grid">
             <div class="r d2">
               <div class="contact-big">
@@ -2084,7 +2175,7 @@
       <div class="foot-in">
         <div class="foot-logo">Bryson Fibanda.</div>
         <div class="foot-copy">
-          © 2026 Bryson Fibanda Omulubi, Nairobi
+          © 2026 · Bryson Fibanda Omulubi · Nairobi
         </div>
         <div class="foot-soc">
           <a href="mailto:brysonfibanda@gmail.com" class="soc"
